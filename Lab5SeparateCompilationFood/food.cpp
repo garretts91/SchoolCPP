@@ -19,6 +19,9 @@ bool Food::hasFlavor(std::string flavor) {
     return false;
 }
 
+// loop over the food items for the operator to work?
+// https://www.geeksforgeeks.org/operator-overloading-cpp/#
+
 //Food Food::operator+(const Food& x)
 //{
 //    return Food();
