@@ -19,25 +19,18 @@ bool Food::hasFlavor(std::string flavor) {
     return false;
 }
 
-// loop over the food items for the operator to work?
-// https://www.geeksforgeeks.org/operator-overloading-cpp/#
+std::vector<std::string> Food::getFlavors() const
+{
+    return std::vector<std::string>(flavors);
+}
 
-//Food Food::operator+(const Food& x)
-//{
-//    return Food();
-//}
-//
-//Food Food::operator+(const Food& x)
-//{
-//    return Food();
-//}
-//
-//Food Food::operator>(const Food& y) const {
-//    std::string newName = name + " and " + y.name;
-//    int newCalories = x.calories + y.calories;
-//    std::string newFlavor = flavors + " and " + y.flavors;
-//    return Food(newName, newCalories, newFlavor);
-//}
+    Food Food::operator+(const Food& otherFood) const {
+    std::string newName = name + " and " + otherFood.name;
+    int newCalories = calories + otherFood.calories;
+    std::vector<std::string> newFlavor = flavors;
+    newFlavor.insert(newFlavor.end(), otherFood.flavors.begin(), otherFood.flavors.end());
+    return Food(newName, newCalories, newFlavor);
+}
 
 Recipe::Recipe(std::string name, int servings, std::vector<std::pair<Food, int>> ingredients) {
     this->name = name;

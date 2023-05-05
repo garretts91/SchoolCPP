@@ -32,9 +32,20 @@ int main() {
     Recipe famSalmon("Kelley's Lemon Garlic Salmon", 4, ingredients);
 
     famSalmon.display();
-    return(5);
+    
+    Food combo = garlic + butter;
 
-    std::string search;
+    std::cout << "\n" << combo.name << std::endl;
+    std::cout << "Calories: " << combo.getCalorieCount() << std::endl;
+    std::cout << "Flavors: ";
+    for (auto& flavor : combo.getFlavors()) {
+        std::cout << flavor << " ";
+    }
+    std::cout << std::endl;
+
+    return(0);
+
+    /*std::string search;
 
     do
     {
@@ -47,6 +58,6 @@ int main() {
                 std::cout << "Food: " << food.name << "\n" << "Calories: " << food.getCalorieCount() << std::endl;
             }
         }
-    } while (search != "Q");
+    } while (search != "Q");*/
 
 }

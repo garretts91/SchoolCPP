@@ -1,4 +1,6 @@
 #pragma once
+
+
 #include <iostream>
 #include <vector>
 
@@ -7,9 +9,9 @@ public:
     Food(std::string name, int calories, std::vector<std::string> flavors);
     int getCalorieCount();
     bool hasFlavor(std::string flavor);
-    //Food operator+(const Food& x) const;
-    //Food operator+(const Food& y) const;
     std::string name;
+    std::vector<std::string> getFlavors() const;
+    Food operator+(const Food& otherFood) const;
 private:
     int calories;
     std::vector<std::string> flavors;
@@ -26,3 +28,4 @@ private:
     int servings;
     std::vector<std::pair<Food, int>> ingredients;
 };
+
