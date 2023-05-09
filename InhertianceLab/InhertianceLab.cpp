@@ -105,7 +105,7 @@ const char* colorize(int font, int back = -1, int style = -1) {
     return code;
 }
 
-struct Superhero {
+struct superHero {
     std::string realName;
     std::string jobTitle;
     std::string catMeme;
@@ -118,8 +118,7 @@ int main()
 {
     Hero superMe;
     Villain superVillain;
-
-    Superhero baldEagleman = { "Dave", "Pizza Delivery Driver", "Grumpy", "Purple", 12, {1, 3, 5, 7, 9} };
+    superHero baldEagleman = { "Dave", "Pizza Delivery Driver", "Grumpy", "Purple", 12, {1, 3, 5, 7, 9} };
 
     std::cout << colorize(MAGENTA, WHITE);
     printf("Bald Eagleman's real name is %s. They are a %s while watching %s Cat in a %s leotard in size %d shoes. Their lucky numbers are ",
