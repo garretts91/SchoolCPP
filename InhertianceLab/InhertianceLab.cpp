@@ -24,7 +24,7 @@ public:
     std::vector<std::string> superPowers;
     std::string weakness;
     Hero() {
-        this->realName = "Placeholder";
+        this->realName = "Garrett";
     }
     std::string getSecretIdentity() {
         return realName;
@@ -117,7 +117,15 @@ struct superHero {
 int main()
 {
     Hero superMe;
+    superMe.name = "banana man";
+    superMe.superPowers = { "bananas" };
+    superMe.weakness = "ghosts";
+    superMe.getSecretIdentity();
+    superMe.print();
+
+
     Villain superVillain;
+
     superHero baldEagleman = { "Dave", "Pizza Delivery Driver", "Grumpy", "Purple", 12, {1, 3, 5, 7, 9} };
 
     std::cout << colorize(MAGENTA, WHITE);
