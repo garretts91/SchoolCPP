@@ -25,6 +25,7 @@ public:
     std::string weakness;
     Hero() {
         this->realName = "Garrett";
+        this->jobTitle = "CSS Noob";
     }
     std::string getSecretIdentity() {
         return realName;
