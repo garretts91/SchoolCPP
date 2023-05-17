@@ -24,15 +24,16 @@ public:
     std::vector<std::string> superPowers;
     std::string weakness;
     Hero() {
-        this->realName = "Garrett";
-        this->jobTitle = "CSS Noob";
+        this->realName = "Aragorn, Son of Arathorn";
+        this->jobTitle = "1st High King of the Reunited Kingdom ";
     }
     std::string getSecretIdentity() {
         return realName;
     };
     void print() {
+        std::cout << "Hero" << std::endl;
         std::cout << "name: " << name << std::endl;
-        std::cout << "job title: " << jobTitle << std::endl;
+        std::cout << "title: " << jobTitle << std::endl;
         std::cout << "secret identity: " << realName << std::endl;
         std::cout << "super powers: ";
         for (std::string power : superPowers) {
@@ -49,6 +50,7 @@ public:
     std::vector<std::string> superPowers;
     std::string weakness;
     void print() {
+        std::cout << "Villain" << std::endl;
         std::cout << "name: " << name << std::endl;
         std::cout << "super powers: ";
         for (std::string power : superPowers) {
@@ -118,18 +120,23 @@ struct superHero {
 int main()
 {
     Hero superMe;
-    superMe.name = "banana man";
-    superMe.superPowers = { "bananas", "oranges", "tacos"};
-    superMe.weakness = "ghosts";
+    superMe.name = "Aragorn";
+    superMe.superPowers = { "Bravery", "Loyalty", "Healing"};
+    superMe.weakness = "Ring of Power";
     superMe.getSecretIdentity();
+    std::cout << colorize(CYAN, BLACK);
     superMe.print();
 
-
     Villain superVillain;
-
+    superVillain.name = "Sauron";
+    superVillain.superPowers = { "Dark Magic", "Manipulation", "Deceit"};
+    superVillain.weakness = "Arrogance";
+    std::cout << colorize(RED, BLACK);
+    superVillain.print();
+    
     superHero baldEagleman = { "Dave", "Pizza Delivery Driver", "Grumpy", "Purple", 12, {1, 3, 5, 7, 9} };
-
-    std::cout << colorize(MAGENTA, WHITE);
+    
+    std::cout << colorize(MAGENTA, BLACK);
     printf("Bald Eagleman's real name is %s. They are a %s while watching %s Cat in a %s leotard in size %d shoes. Their lucky numbers are ",
         baldEagleman.realName.c_str(), baldEagleman.jobTitle.c_str(), baldEagleman.catMeme.c_str(), baldEagleman.favoriteLeotard.c_str(), baldEagleman.shoeSize
     );
