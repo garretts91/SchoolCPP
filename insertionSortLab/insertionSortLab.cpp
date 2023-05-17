@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-void insertionSort(int arr[], int size)
+void insertionSortAscending(int arr[], int size)
 {
     int i, j, key;
     // iterate through the array, starting at position 1
@@ -40,7 +40,6 @@ void insertionSortDescending(int arr[], int size)
         }
         arr[j + 1] = key;
     }
-
 }
 
 void print(int arr[], int n)
@@ -50,12 +49,50 @@ void print(int arr[], int n)
     std::cout << '\n';
 }
 
+enum COLORS {
+    NC = -1,
+    BLACK,
+    RED,
+    GREEN,
+    YELLOW,
+    BLUE,
+    MAGENTA,
+    CYAN,
+    WHITE,
+};
+
+const char* colorize(int font, int back = -1, int style = -1) {
+    static char code[20];
+
+    if (font >= 0)
+        font += 30;
+    else
+        font = 0;
+    if (back >= 0)
+        back += 40;
+    else
+        back = 0;
+
+    if (back > 0 && style > 0) {
+        sprintf_s(code, "\033[%d;%d;%dm", font, back, style);
+    }
+    else if (back > 0) {
+        sprintf_s(code, "\033[%d;%dm", font, back);
+    }
+    else {
+        sprintf_s(code, "\033[%dm", font);
+    }
+    return code;
+}
+
 int main()
 {
-    int numbers[] = { 9, 0, 5, 3, 8, 1, 4, 6, 7, 10, 2 };
+    int numbers[] = { 9, 0, 5, 3, 8, 1, 17, 4, 6, 7, 10, 2, 20, 11, 19, 13, 12, 14, 18, 16, 15 };
     int size = sizeof(numbers) / sizeof(numbers[0]);
 
     insertionSortDescending(numbers, size);
+
+    std::cout << colorize(GREEN, BLACK);
     print(numbers, size);
 
     return 0;
