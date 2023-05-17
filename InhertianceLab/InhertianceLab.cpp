@@ -118,7 +118,7 @@ int main()
 {
     Hero superMe;
     superMe.name = "banana man";
-    superMe.superPowers = { "bananas" };
+    superMe.superPowers = { "bananas", "oranges", "tacos"};
     superMe.weakness = "ghosts";
     superMe.getSecretIdentity();
     superMe.print();
