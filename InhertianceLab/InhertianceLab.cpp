@@ -145,4 +145,4 @@ int main()
     }
     printf(" and they are all winners");
     std::cout << colorize(WHITE, BLACK);
-}
+} 
