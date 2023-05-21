@@ -178,7 +178,7 @@ int main() {
 //    WHITE,
 //};
 //
-///**
+////**
 //* Colorize terminal colors ANSI escape sequences.
 //*
 //* @param font font color (-1 to 7), see COLORS enum
