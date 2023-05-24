@@ -12,12 +12,11 @@ public:
     int data;
     Node* next;
     Node* prev;
-
     // Default constructor
-    Node()
+    Node(int value)
     {
-        data = 0;
-        next = NULL;
+        data = value;
+        next = nullptr;
         prev = nullptr;
     }
 
@@ -25,19 +24,24 @@ public:
     Node(int data)
     {
         this->data = data;
-        this->next = NULL;
+        this->next = nullptr;
+        this->prev = nullptr;
     }
 };
 
 // Linked list class to
 // implement a linked list.
 class Linkedlist {
+private:
     Node* head;
     Node* tail;
 
 public:
     // Default constructor
-    Linkedlist() { head = NULL; }
+    Linkedlist() {
+        head = nullptr;
+        tail = nullptr;
+    }
 
     // Function to insert a
     // node at the end of the
