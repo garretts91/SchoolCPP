@@ -1,8 +1,5 @@
 // doublyLinkedList.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 // LinkedLists.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
 // The linked list stores data in sequential storage, like arrays.Though the data are stored sequentially, the memory locations are not contiguous.
 // Unlike an array, the linked list can store data of different data types.
 
@@ -14,12 +11,14 @@ class Node {
 public:
     int data;
     Node* next;
+    Node* prev;
 
     // Default constructor
     Node()
     {
         data = 0;
         next = NULL;
+        prev = nullptr;
     }
 
     // Parameterised Constructor
@@ -34,6 +33,7 @@ public:
 // implement a linked list.
 class Linkedlist {
     Node* head;
+    Node* tail;
 
 public:
     // Default constructor
