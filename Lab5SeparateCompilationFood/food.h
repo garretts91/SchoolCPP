@@ -27,4 +27,3 @@ private:
     int servings;
     std::vector<std::pair<Food, int>> ingredients;
 };
-

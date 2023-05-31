@@ -32,7 +32,7 @@ int main() {
     Recipe famSalmon("Kelley's Lemon Garlic Salmon", 4, ingredients);
 
     famSalmon.display();
-    
+
     Food combo = garlic + butter;
 
     std::cout << "\n" << combo.name << std::endl;

@@ -67,7 +67,7 @@ public:
         }
 
         Node* temp = head;
-        int count = 1;
+        int count = 0;
 
         // Find length of the linked-list.
         while (temp != NULL && count < nodeOffset) {

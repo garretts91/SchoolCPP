@@ -24,7 +24,7 @@ std::vector<std::string> Food::getFlavors() const
     return std::vector<std::string>(flavors);
 }
 
-    Food Food::operator+(const Food& otherFood) const {
+Food Food::operator+(const Food& otherFood) const {
     std::string newName = name + " and " + otherFood.name;
     int newCalories = calories + otherFood.calories;
     std::vector<std::string> newFlavor = flavors;
