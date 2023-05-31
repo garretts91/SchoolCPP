@@ -1,5 +1,5 @@
-// doublyLinkedList
 // LinkedLists.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
 // The linked list stores data in sequential storage, like arrays.Though the data are stored sequentially, the memory locations are not contiguous.
 // Unlike an array, the linked list can store data of different data types.
 
@@ -10,152 +10,122 @@
 class Node {
 public:
     int data;
-    Node* next;
     Node* prev;
+    Node* next;
 
     // Default constructor
-    Node()
-    {
+    Node() {
         data = 0;
-        next = nullptr;
+        prev = NULL;
+        next = NULL;
     }
 
     // Parameterised Constructor
-    Node(int data)
-    {
+    Node(int data) {
         this->data = data;
-        this->next = NULL;
+        prev = NULL;
+        next = NULL;
     }
 };
 
 // Linked list class to
 // implement a linked list.
-class Linkedlist {
+class DoublyLinkedList {
     Node* head;
+    Node* tail;
 
 public:
     // Default constructor
-    Linkedlist() { head = NULL; }
+    DoublyLinkedList() {
+        head = NULL;
+        tail = NULL;
+    }
 
     // Function to insert a
     // node at the end of the
     // linked list.
-    void insertNode(int);
+    void insertNode(int data) {
+        Node* newNode = new Node(data);
 
-    // Function to print the
-    // linked list.
-    void printList();
+        if (head == NULL) {
+            head = newNode;
+            tail = newNode;
+        }
+        else {
+            newNode->prev = tail;
+            tail->next = newNode;
+            tail = newNode;
+        }
+    }
 
     // Function to delete the
     // node at given position
-    void deleteNode(int);
+    void deleteNode(int nodeOffset) {
+        if (head == NULL) {
+            std::cout << "List empty." << std::endl;
+            return;
+        }
+
+        Node* temp = head;
+        int count = 1;
+
+        // Find length of the linked-list.
+        while (temp != NULL && count < nodeOffset) {
+            temp = temp->next;
+            count++;
+        }
+
+
+        if (temp == NULL) {
+            std::cout << "Index out of range." << std::endl;
+            return;
+        }
+
+        if (temp == head) {
+            head = head->next;
+            if (head != NULL) {
+                head->prev = NULL;
+            }
+            else {
+                tail = NULL;
+            }
+        }
+        else if (temp == tail) {
+            tail = tail->prev;
+            if (tail != NULL) {
+                tail->next = NULL;
+            }
+            else {
+                head = NULL;
+            }
+        }
+        else {
+            temp->prev->next = temp->next;
+            temp->next->prev = temp->prev;
+        }
+
+        delete temp;
+    }
+
+    // Function to print the
+    // linked list.
+    void printList() {
+        Node* temp = head;
+
+        if (head == NULL) {
+            std::cout << "List empty." << std::endl;
+            return;
+        }
+
+        while (temp != NULL) {
+            std::cout << temp->data << " ";
+            temp = temp->next;
+        }
+    }
 };
 
-// Function to delete the
-// node at given position
-void Linkedlist::deleteNode(int nodeOffset)
-{
-    Node* temp1 = head, * temp2 = NULL;
-    int ListLen = 0;
-
-    if (head == NULL) {
-        std::cout << "List empty." << std::endl;
-        return;
-    }
-
-    // Find length of the linked-list.
-    while (temp1 != NULL) {
-        temp1 = temp1->next;
-        ListLen++;
-    }
-
-    // Check if the position to be
-    // deleted is less than the length
-    // of the linked list.
-    if (ListLen < nodeOffset) {
-        std::cout << "Index out of range"
-            << std::endl;
-        return;
-    }
-
-    // Declare temp1
-    temp1 = head;
-
-    // Deleting the head.
-    if (nodeOffset == 1) {
-
-        // Update head
-        head = head->next;
-        delete temp1;
-        return;
-    }
-
-    // Traverse the list to
-    // find the node to be deleted.
-    while (nodeOffset-- > 1) {
-
-        // Update temp2
-        temp2 = temp1;
-
-        // Update temp1
-        temp1 = temp1->next;
-    }
-
-    // Change the next pointer
-    // of the previous node.
-    temp2->next = temp1->next;
-
-    // Delete the node
-    delete temp1;
-}
-
-// Function to insert a new node.
-void Linkedlist::insertNode(int data)
-{
-    // Create the new Node.
-    Node* newNode = new Node(data);
-
-    // Assign to head
-    if (head == NULL) {
-        head = newNode;
-        return;
-    }
-
-    // Traverse till end of list
-    Node* temp = head;
-    while (temp->next != NULL) {
-
-        // Update temp
-        temp = temp->next;
-    }
-
-    // Insert at the last.
-    temp->next = newNode;
-}
-
-// Function to print the
-// nodes of the linked list.
-void Linkedlist::printList()
-{
-    Node* temp = head;
-
-    // Check for empty list.
-    if (head == NULL) {
-        std::cout << "List empty" << std::endl;
-        return;
-    }
-
-    // Traverse the list.
-    while (temp != NULL) {
-        std::cout << temp->data << " ";
-        temp = temp->next;
-    }
-}
-
-// Driver Code
-int main()
-{
-    Linkedlist list;
+int main() {
+    DoublyLinkedList list;
 
     // Inserting nodes
     list.insertNode(1);
@@ -164,16 +134,15 @@ int main()
     list.insertNode(4);
 
     std::cout << "Elements of the list are: ";
-
-    // Print the list
     list.printList();
     std::cout << std::endl;
 
-    // Delete node at position 1.
-    list.deleteNode(1);
+    // Delete node at position 3.
+    list.deleteNode(3);
 
     std::cout << "Elements of the list are: ";
     list.printList();
     std::cout << std::endl;
+
     return 0;
 }
