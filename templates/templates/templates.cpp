@@ -11,9 +11,10 @@ D divide(D x, D y) {
 
 template <>
 char divide<char>(char x, char y) {
-    //return (char)((int)x / (int)y);
+    return (char)((int)x / (int)y);
     //cant seem to get return ascii?
-    return x / y;
+    //not sure if it is my computer
+    //return x / y;
 }
 
 //int divide(int x, int y)
