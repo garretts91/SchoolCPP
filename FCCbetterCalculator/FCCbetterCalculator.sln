@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FCCbetterCalculator", "FCCbetterCalculator\FCCbetterCalculator.vcxproj", "{5B19CEA7-8EC7-4E7E-A3B8-60F0AFA9729E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5B19CEA7-8EC7-4E7E-A3B8-60F0AFA9729E}.Debug|x64.ActiveCfg = Debug|x64
+		{5B19CEA7-8EC7-4E7E-A3B8-60F0AFA9729E}.Debug|x64.Build.0 = Debug|x64
+		{5B19CEA7-8EC7-4E7E-A3B8-60F0AFA9729E}.Debug|x86.ActiveCfg = Debug|Win32
+		{5B19CEA7-8EC7-4E7E-A3B8-60F0AFA9729E}.Debug|x86.Build.0 = Debug|Win32
+		{5B19CEA7-8EC7-4E7E-A3B8-60F0AFA9729E}.Release|x64.ActiveCfg = Release|x64
+		{5B19CEA7-8EC7-4E7E-A3B8-60F0AFA9729E}.Release|x64.Build.0 = Release|x64
+		{5B19CEA7-8EC7-4E7E-A3B8-60F0AFA9729E}.Release|x86.ActiveCfg = Release|Win32
+		{5B19CEA7-8EC7-4E7E-A3B8-60F0AFA9729E}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9E516B80-17FB-4D8D-B0F4-2A9929F8238D}
+	EndGlobalSection
+EndGlobal
