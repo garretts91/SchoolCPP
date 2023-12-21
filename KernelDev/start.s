@@ -29,6 +29,7 @@
 // The following will calculate these constants:
 .set MB_MAGIC, 0x1BADB002   // This is a 'magic' constant that GRUB will use to detect the location of the kernel
 .set MB_FLAGS, (1 << 0) | (1 << 1) // This tells GRUB to 1: load modules on page boundaries and 2: provide a memory map (this is useful for later development)
+
 // Calculate a checksum that includes all previous values:
 .set MB_CHECKSUM, (0 - (MB_MAGIC + MB_FLAGS))
 
